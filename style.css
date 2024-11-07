@@ -1,0 +1,149 @@
+/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  background: linear-gradient(135deg, #e0f7fa, #00acc1);
+  color: #004d40;
+  transition: background-color 0.5s ease;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background-color: #00796b;
+}
+
+.logo {
+  width: 60px;
+  margin-right: 15px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #e0f7fa;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #004d40;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  animation: slideDown 1s ease-in-out;
+}
+
+.navbar a {
+  color: #e0f7fa;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00796b;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* Sections */
+.section {
+  padding: 70px;
+  max-width: 75vw;
+  margin: 40px auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.section:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Weather Card */
+.weather-card {
+  background-color: #80deea;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  transition: transform 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: scale(1.05);
+}
+
+.temperature {
+  font-size: 2.2rem;
+  color: #004d40;
+}
+
+/* Contacts */
+#contacts p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar a {
+      padding: 10px;
+  }
+
+  .header h1 {
+      font-size: 2rem;
+  }
+
+  .section {
+      padding: 30px;
+  }
+
+  .weather-card {
+      padding: 20px;
+      font-size: 1rem;
+  }
+}
